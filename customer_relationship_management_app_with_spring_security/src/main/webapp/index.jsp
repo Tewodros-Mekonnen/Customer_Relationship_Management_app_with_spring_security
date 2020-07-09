@@ -1,1 +1,1 @@
-<% response.sendRedirect("customers/showFormToAddCustomers"); %>
+<% response.sendRedirect("customers/list"); %>
