@@ -28,7 +28,7 @@
 	<div>
 
 		<!-- inside the form, when we click save button, the method inside CustomerController with 'saveCustomer' mapping will run -->
-		<form:form action="saveCustomer" modelAttribute="customer">
+		<form:form action="saveCustomer" modelAttribute="customer"  method="POST" >
 
 			<!-- need to associate this data with customer id, if we don't add this code, when we 
 			update data, it will just make it a new entry instead of update -->
@@ -54,10 +54,11 @@
 						<td><label>Email:</label></td>
 						<td><form:input path="email" /></td>
 					</tr>
+					<tr></tr>
 
 					<tr>
 						<td><label></label></td>
-						<td><input type="submit" value="Save" class="save"></td>
+						<td><input type="submit" value="Save" class="save " ></td>
 					</tr>
 
 				</tbody>
@@ -66,6 +67,11 @@
 			</table>
 
 		</form:form>
+		
+		<div style=" clear; both; " ></div>
+		<!-- input button: Back To List -->
+		<input class="add-button" type="button" value="Back to List"
+		       onclick="window.location.href='${pageContext.request.contextPath}/customers/list'; return false; " />
 
 	</div>
 

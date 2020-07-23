@@ -15,17 +15,19 @@
 
   <properties>
   
-	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  
 	    
 	    <springframework.version>5.2.7.RELEASE</springframework.version>
 		<springsecurity.version>5.0.3.RELEASE</springsecurity.version>
 	
-		<hibernate.version>5.2.12.Final</hibernate.version>
-	       <mysql.connector.version>8.0.16</mysql.connector.version>
-		<c3po.version>0.9.5.4</c3po.version>
+		<hibernate.version>5.4.1.Final</hibernate.version>
+	       <mysql.connector.version>8.0.15</mysql.connector.version>
+		<c3po.version>0.9.5.2</c3po.version>
 	    
-	    <maven.compiler.source>13</maven.compiler.source>
-	    <maven.compiler.target>13</maven.compiler.target>
+	    <maven.compiler.source>1.8</maven.compiler.source>
+	    <maven.compiler.target>1.8</maven.compiler.target>
+	    
+	   
 	    
   </properties>
 
@@ -35,6 +37,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
 
@@ -52,6 +60,12 @@
 		    <artifactId>spring-security-config</artifactId>
 		    <version>${springsecurity.version}</version>
 		</dependency>	
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${springsecurity.version}</version>
+		</dependency>
 		
 		<!-- Add Spring Security Taglibs support -->
 		<dependency>
@@ -120,6 +134,12 @@
             <artifactId>c3p0</artifactId>
             <version>${c3po.version}</version>
         </dependency>
+        
+        <dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
 
 		<!-- Hibernate Validator -->
 		<dependency>
@@ -135,12 +155,7 @@
 		    <version>2.3.0</version>
 		</dependency>
 		
-		<!-- Tomcat DBCP -->
-		<dependency>
-		    <groupId>org.apache.tomcat</groupId>
-		    <artifactId>tomcat-dbcp</artifactId>
-		    <version>8.5.51</version>
-		</dependency>
+		
 		
   
     
@@ -160,6 +175,8 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.0</version>
 			</plugin>
+			
+			
 
 		</plugins>
    
