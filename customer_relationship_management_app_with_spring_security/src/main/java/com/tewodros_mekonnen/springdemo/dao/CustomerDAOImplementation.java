@@ -43,4 +43,19 @@ public class CustomerDAOImplementation implements CustomerDAO {
 		return customers;
 	}
 
+	@Override
+	public Customer getCustomer(int theId) {
+		
+		// get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// read from the database using the primary key!
+		Customer theCustomer = currentSession.get(Customer.class, theId);
+		
+		
+		return theCustomer;
+	}
+
+	
+
 }

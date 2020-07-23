@@ -20,7 +20,7 @@
 	<hr class="horizontal-line" >
 	<div id="wrapper">
 		<div id="header">
-			<h2>CRM - Customer Relationship Manager</h2>
+			<h2>CRM - Customer Registration Manager</h2>
 		</div>
 	</div>
 	<hr class="horizontal-line" >
@@ -30,8 +30,13 @@
 		<div id="content">
 		
 		<!-- input button: Add Customer -->
-		<input class="add-button" type="button" value="ADD CUSTOMER"
-		       onclick="window.location.href='showFormToAddCustomers'; return false; " />
+		<div>
+			<input class="add-button" type="button" value="ADD CUSTOMER"
+			       onclick="window.location.href='showFormToAddCustomers'; return false; " />
+			<span class="note" >NOTE: The DELETE functionality is not active currently!</span>       
+			      
+		       
+		 </div>      
 		<hr class="horizontal-line" >       
 		
 			<!--  add our html table here -->
@@ -50,17 +55,28 @@
 					<!-- this is an update link with customer id -->
 					<c:url var="updateLink" value="/customers/showFormForUpdate" >
 					
-						<c:param name="customerId" value="${tempCustomer.id}]" ></c:param>
+						<c:param name="customerId" value="${tempCustomer.id}" />
+						<!-- the value of ${tempCustomer.id} will be passed to value="/customers/showFormForUpdate" -->
+						
+					</c:url>
 					
+					<!-- this is a delete link with customer id -->
+					<c:url var="deleteLink" value="/customers/delete" >
+					
+						<c:param name="customerId" value="${tempCustomer.id}" />
+						<!-- the value of ${tempCustomer.id} will be passed to value="/customers/delete" -->
+						
 					</c:url>
 				
 					<tr>
 						<td> ${tempCustomer.firstName} </td>
 						<td> ${tempCustomer.lastName} </td>
 						<td> ${tempCustomer.email} </td>
+						
 						<td> 
 							<!--  this displays the update link -->
-							<a href="${updateLink}" >UPDATE</a>
+							<a class="update-link" href="${updateLink}" >UPDATE</a>
+							<a class="delete-link" href="${deleteLink}" >DELETE</a>
 						</td>
 					</tr>
 				

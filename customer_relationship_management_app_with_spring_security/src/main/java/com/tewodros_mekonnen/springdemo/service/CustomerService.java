@@ -10,4 +10,8 @@ public interface CustomerService {
 
 	public List<Customer> getCustomers();
 
+	public Customer getCustomer(int theId);
+
+	
+
 }
