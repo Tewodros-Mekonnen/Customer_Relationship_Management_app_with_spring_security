@@ -33,7 +33,7 @@
 		<div>
 			<input class="add-button" type="button" value="ADD CUSTOMER"
 			       onclick="window.location.href='showFormToAddCustomers'; return false; " />
-			<span class="note" >NOTE: The DELETE functionality is not active currently!</span>       
+			<!-- <span class="note" >NOTE: The DELETE functionality is not active currently!</span>   -->     
 			      
 		       
 		 </div>      
@@ -76,7 +76,9 @@
 						<td> 
 							<!--  this displays the update link -->
 							<a class="update-link" href="${updateLink}" >UPDATE</a>
-							<a class="delete-link" href="${deleteLink}" >DELETE</a>
+							<a class="delete-link"
+								onclick="if(!(confirm('Are you sure you want to delete this customer?'))) return false  "
+							 href="${deleteLink}" >DELETE</a>
 						</td>
 					</tr>
 				
