@@ -95,3 +95,16 @@ margin-right:15px; }
 	margin-bottom: 15px;
 	background: #00548B;
 }
+
+.search-box{
+	border: 1px solid #00548B; 
+	border-radius: 5px; 
+	padding-left: 10px;
+}
+
+.search-button{
+	border: 1px solid #00548B; 
+	border-radius: 5px; 
+	color: #FFFFFF;
+	background: #00548B;
+}

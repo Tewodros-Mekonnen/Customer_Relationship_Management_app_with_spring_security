@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 
@@ -33,7 +34,16 @@
 		<div>
 			<input class="add-button" type="button" value="ADD CUSTOMER"
 			       onclick="window.location.href='showFormToAddCustomers'; return false; " />
-			<!-- <span class="note" >NOTE: The DELETE functionality is not active currently!</span>   -->     
+			<!-- <span class="note" >NOTE: The DELETE functionality is not active currently!</span>   -->  
+			
+			
+			<!-- adding search functionality -->
+			<form:form  action="searchCustomer"  method="GET">
+				Search Customer:<input type="text" placeholder="enter customer name.." name="theSearchName" class="search-box" >
+							<input type="submit"  value="Search" class="search-button" >
+			</form:form>
+			
+			   
 			      
 		       
 		 </div>      
