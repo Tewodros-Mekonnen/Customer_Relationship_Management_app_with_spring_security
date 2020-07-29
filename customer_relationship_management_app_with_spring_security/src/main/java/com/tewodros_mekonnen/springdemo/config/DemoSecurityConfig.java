@@ -13,7 +13,7 @@ import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity 
 public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	// add a reference to our security data source
@@ -34,14 +34,14 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.authorizeRequests()
-			.antMatchers("/customer/showForm*").hasAnyRole("MANAGER", "ADMIN")
-			.antMatchers("/customer/save*").hasAnyRole("MANAGER", "ADMIN")
-			.antMatchers("/customer/delete").hasRole("ADMIN")
-			.antMatchers("/customer/**").hasRole("EMPLOYEE")
+			.antMatchers("/customers/showForm*").hasAnyRole("MANAGER", "ADMIN")
+			.antMatchers("/customers/save*").hasAnyRole("MANAGER", "ADMIN")
+			.antMatchers("/customers/delete").hasRole("ADMIN")
+			.antMatchers("/customers/**").hasRole("EMPLOYEE")
 			.antMatchers("/resources/**").permitAll()
 			.and()
 			.formLogin()
-				.loginPage("/showMyLoginPage")
+				 .loginPage("/showMyLoginPage") 
 				.loginProcessingUrl("/authenticateTheUser")
 				.permitAll()
 			.and()

@@ -1,7 +1,8 @@
 <html>
 
 <head>
-	<title>Registration Confirmation</title>
+	<link rel="shortcut icon" href="/resources/assets/favicon.ico?" type="image/x-icon" />
+	<title>Tewodros Mekonnen - Registration Confirmation</title>
 </head>
 
 <body>

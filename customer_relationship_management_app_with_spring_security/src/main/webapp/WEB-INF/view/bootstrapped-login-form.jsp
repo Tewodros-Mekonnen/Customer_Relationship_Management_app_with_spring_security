@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 
@@ -5,8 +7,8 @@
 <html lang="en">
 
 <head>
-	
-	<title>Login Page</title>
+	<link rel="shortcut icon" href="/resources/assets/favicon.ico?" type="image/x-icon" />
+	<title>Tewodros Mekonnen - Login Page</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
@@ -36,7 +38,8 @@
 				<div style="padding-top: 30px" class="panel-body">
 
 					<!-- Login Form -->
-					<form action="${pageContext.request.contextPath}/authenticateTheUser" 
+					<form:form 
+						  action="${pageContext.request.contextPath}/authenticateTheUser" 
 						  method="POST" class="form-horizontal">
 
 					    <!-- Place for messages: error, alert etc ... -->
@@ -95,7 +98,7 @@
 							   name="${_csrf.parameterName}"
 							   value="${_csrf.token}" />
 						
-					</form>
+					</form:form>
 
 				</div>
 				
@@ -103,6 +106,19 @@
 
 			<div>
 				<a href="${pageContext.request.contextPath}/register/showRegistrationForm" class="btn btn-primary" role="button" aria-pressed="true">Register New User</a>
+			</div>
+			<div></div>
+			<div></div><br><br>
+			<div>
+				<p>Welcome to Customer Relationship Management app, developed by <span id="my-name" >Tewodros Mekonnen!</span></p>
+				<p>Users of this app are classified in three Roles: ADMIN, MANAGER and EMPLOYEE.</p>
+				<p>Feel free to register by clicking "Register New User" button! You will be registered as ROLE-EMPLOYEE.<br>
+				   Employees can only see registered customers, they are not authorized to add, update or delete the list!</p>
+				<p>To get full authorization, you must login as ADMIN or MANAGER. Use the following credentials:<br>
+				     1.username = kalkidan, password = fun123 (ADMIN)<br>
+				     2.username = melkam, password = fun123 (MANAGER) </p>
+				<p>Thank you!</p>     
+			
 			</div>
 
 		</div>

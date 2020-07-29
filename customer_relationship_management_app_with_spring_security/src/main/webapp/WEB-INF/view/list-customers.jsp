@@ -1,12 +1,14 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 
 <html>
 
 <head>
-	<title>List Customers</title>
+	<link rel="shortcut icon" href="/resources/assets/favicon.ico?" type="image/x-icon" />
+	<title>Tewodros Mekonnen - List Customers</title>
 	
 	<!-- reference our style sheet -->
 
@@ -30,24 +32,30 @@
 	
 		<div id="content">
 		
-		<!-- input button: Add Customer -->
-		<div>
-			<input class="add-button" type="button" value="ADD CUSTOMER"
-			       onclick="window.location.href='showFormToAddCustomers'; return false; " />
-			<!-- <span class="note" >NOTE: The DELETE functionality is not active currently!</span>   -->  
+		    	<p  >
+					User: <security:authentication  property="principal.username" />,<br> Role(s): <security:authentication property="principal.authorities" />
+			    </p>
+		
+				<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')" >
+					
+					<!-- input button: Add Customer -->
+					<input class="add-button" type="button" value="ADD CUSTOMER"
+			      		 onclick="window.location.href='showFormToAddCustomers'; return false; " />
+					<!-- <span class="note" >NOTE: The DELETE functionality is not active currently!</span>   -->  
 			
+				</security:authorize>	
 			
-			<!-- adding search functionality -->
-			<form:form  action="searchCustomer"  method="GET">
-				Search Customer:<input type="text" placeholder="enter customer name.." name="theSearchName" class="search-box" >
+				<!-- adding search functionality -->
+				<form:form  action="searchCustomer"  method="GET">
+					Search Customer:<input type="text" placeholder="enter customer name.." name="theSearchName" class="search-box" >
 							<input type="submit"  value="Search" class="search-button" >
-			</form:form>
+				</form:form>
 			
 			   
 			      
 		       
-		 </div>      
-		<hr class="horizontal-line" >       
+		     
+			<hr class="horizontal-line" >       
 		
 			<!--  add our html table here -->
 		
@@ -56,7 +64,13 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Email</th>
+					
+					<!-- Only show "Action" column for managers or admin -->
+				<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')" >
+				
 					<th>Action</th>
+					
+				</security:authorize>		
 				</tr>
 				
 				<!-- loop over and print our customers -->
@@ -83,13 +97,21 @@
 						<td> ${tempCustomer.lastName} </td>
 						<td> ${tempCustomer.email} </td>
 						
+					<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')" >
 						<td> 
 							<!--  this displays the update link -->
-							<a class="update-link" href="${updateLink}" >UPDATE</a>
-							<a class="delete-link"
-								onclick="if(!(confirm('Are you sure you want to delete this customer?'))) return false  "
-							 href="${deleteLink}" >DELETE</a>
+							<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')" >
+								<a class="update-link" href="${updateLink}" >UPDATE</a>
+							</security:authorize>
+							
+							<security:authorize access="hasAnyRole('ADMIN')" >
+								<a class="delete-link"
+									onclick="if(!(confirm('Are you sure you want to delete this customer?'))) return false  "
+							 	href="${deleteLink}" >DELETE</a>
+							</security:authorize> 
+							
 						</td>
+					</security:authorize>		
 					</tr>
 				
 				</c:forEach>
@@ -100,6 +122,16 @@
 	
 	</div>
 	<hr class="horizontal-line" >
+	<br>
+	
+	<!-- Add a logout button -->
+	<form:form action="${pageContext.request.contextPath}/logout" 
+			   method="POST">
+	
+		<input type="submit" value="Logout" class="logout-button" />
+	
+	</form:form>
+	
 	
 </body>
 

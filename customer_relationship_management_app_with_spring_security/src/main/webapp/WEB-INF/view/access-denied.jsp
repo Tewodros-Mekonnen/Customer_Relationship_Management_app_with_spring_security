@@ -1,7 +1,8 @@
 <html>
 
 <head>
-	<title>luv2code - Access Denied</title>
+	<link rel="shortcut icon" href="/resources/assets/favicon.ico?" type="image/x-icon" />
+	<title>Tewodros Mekonnen - Access Denied</title>
 </head>
 
 <body>

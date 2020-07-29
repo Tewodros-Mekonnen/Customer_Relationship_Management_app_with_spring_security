@@ -96,13 +96,17 @@ margin-right:15px; }
 	background: #00548B;
 }
 
+.user-role, p{ border: 1px solid #A9DDFF; color: red; width: 400px;padding: 5px 0px 5px 5px;border-radius: 8px;background-color: #A9DDFF}
+
+
+
 .search-box{
 	border: 1px solid #00548B; 
 	border-radius: 5px; 
 	padding-left: 10px;
 }
 
-.search-button{
+.search-button, .logout-button{
 	border: 1px solid #00548B; 
 	border-radius: 5px; 
 	color: #FFFFFF;

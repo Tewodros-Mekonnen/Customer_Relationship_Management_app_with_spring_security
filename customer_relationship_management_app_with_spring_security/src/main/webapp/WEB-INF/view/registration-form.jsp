@@ -5,8 +5,8 @@
 <html lang="en">
 
 <head>
-	
-	<title>Register New User Form</title>
+	<link rel="shortcut icon" href="/resources/assets/favicon.ico?" type="image/x-icon" />
+	<title>Tewodros Mekonnen - Register New User Form</title>
 	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
