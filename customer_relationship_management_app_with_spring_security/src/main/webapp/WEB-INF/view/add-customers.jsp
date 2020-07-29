@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Customers</title>
+<link rel="shortcut icon" href="/resources/assets/favicon.ico?" type="image/x-icon" />
+<title>Tewodros Mekonnen - Add Customers</title>
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css" />
 
