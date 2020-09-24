@@ -29,6 +29,15 @@
 		<div id="loginbox" style="margin-top: 50px;"
 			class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
 			
+			<div>
+				<p>Please use the following credentials to test the app, or feel free to create your own
+				   user name and password by clicking "Register New User" button! <br>
+				     1.username = kalkidan, password = fun123 (ADMIN)<br>
+				     2.username = melkam, password = fun123 (MANAGER) </p>
+				<p>Thank you!</p>     
+			
+			</div>
+			
 			<div class="panel panel-info">
 
 				<div class="panel-heading">

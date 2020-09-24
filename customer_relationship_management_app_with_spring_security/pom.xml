@@ -75,7 +75,7 @@
 		</dependency>	
 
 		<!-- Servlet, JSP and JSTL support -->
-		<dependency> <!-- ok -->
+		<dependency> <!-- this dependency is important since we are using all java configuration-->
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>4.0.1</version>
